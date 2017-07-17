@@ -1,0 +1,8 @@
+"pt-BR":
+  messages:
+    confirm: Tem certeza?
+    listing: Listando
+    new: Novo
+    created: Criado com sucesso.
+    updated: Editado com sucesso.
+    destroyed: Apagado com sucesso.
