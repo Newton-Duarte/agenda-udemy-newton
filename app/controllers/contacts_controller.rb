@@ -6,6 +6,11 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.order(:name).page(params[:page]).per(5)
+    if params[:search]
+      @contacts = Contact.search(params[:search]).order(:name).page(params[:page]).per(5)
+    else
+      @contacts = Contact.all.order(:name).page(params[:page]).per(5)
+    end
   end
 
   # GET /contacts/1

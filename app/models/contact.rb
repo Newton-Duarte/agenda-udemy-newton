@@ -7,4 +7,9 @@ class Contact < ActiveRecord::Base
 
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :phones, reject_if: :all_blank, allow_destroy: true
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
+
 end

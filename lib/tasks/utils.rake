@@ -13,6 +13,17 @@ namespace :utils do
 
     puts "Gerando Contatos (Contacts)...[OK]"
 
+    puts "Gerando Endereços (Address)..."
+
+    Contact.all.each do |contact|
+      Address.create!(street: Faker::Address.street_address,
+                      city: Faker::Address.city,
+                      state: Faker::Address.state_abbr,
+                      contact: contact)
+    end
+
+    puts "Gerando Endereços (Address)...[OK]"
+
     puts "Gerando Telefones de Contatos (Phones)..."
 
     Contact.all.each do |contact|
